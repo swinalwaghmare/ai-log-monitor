@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: worker
-        image: 320819923295.dkr.ecr.us-east-1.amazonaws.com/log-worker:latest
+        image: 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-worker:latest

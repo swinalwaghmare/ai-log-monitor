@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: log-generator
-        image: 320819923295.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest
+        image: 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest
         command: [ "python", "-m", "app.log_generator" ]

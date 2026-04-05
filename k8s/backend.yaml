@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 320819923295.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest # or ECR image
+        image: 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest # or ECR image
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
