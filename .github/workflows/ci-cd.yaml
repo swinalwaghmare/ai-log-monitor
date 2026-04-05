@@ -33,19 +33,19 @@ jobs:
 
       - name: Build Backend Image
         run: |
-          docker build -t backend -f backend/Dockerfile .
-          docker tag backend:latest 554074174392.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+          docker build -t log-backend -f backend/Dockerfile .
+          docker tag log-backend:latest 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest
 
       - name: Push Backend
-        run: docker push 554074174392.dkr.ecr.us-east-1.amazonaws.com/backend:latest
+        run: docker push 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-backend:latest
 
       - name: Build Worker Image
         run: |
-          docker build -t worker -f worker/Dockerfile .
-          docker tag worker:latest 554074174392.dkr.ecr.us-east-1.amazonaws.com/worker:latest
+          docker build -t log-worker -f worker/Dockerfile .
+          docker tag log-worker:latest 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-worker:latest
 
       - name: Push Worker
-        run: docker push 554074174392.dkr.ecr.us-east-1.amazonaws.com/worker:latest
+        run: docker push 554074174392.dkr.ecr.us-east-1.amazonaws.com/log-worker:latest
 
       - name: Install kubectl
         uses: azure/setup-kubectl@v3
