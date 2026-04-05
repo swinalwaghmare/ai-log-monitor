@@ -18,6 +18,14 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-1
+
+      - name: Ensure ECR repositories exist
+        run: |
+          aws ecr describe-repositories --repository-names log-backend || \
+          aws ecr create-repository --repository-name log-backend
+
+          aws ecr describe-repositories --repository-names log-worker || \
+          aws ecr create-repository --repository-name log-worker
       
       - name: Login to ECR
         run: |
@@ -33,7 +41,7 @@ jobs:
 
       - name: Build Worker Image
         run: |
-          docker build -t backend -f worker/Dockerfile .
+          docker build -t worker -f worker/Dockerfile .
           docker tag worker:latest 554074174392.dkr.ecr.us-east-1.amazonaws.com/worker:latest
 
       - name: Push Worker
@@ -43,6 +51,9 @@ jobs:
         uses: azure/setup-kubectl@v3
         with:
           version: 'v1.29.0'
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region us-east-1 --name dev-cluster
 
       - name: Deploy to EKS
         run: |
