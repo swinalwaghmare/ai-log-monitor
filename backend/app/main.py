@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Response
-from prometheus_client import Counter, generate_latest
+from prometheus_client import Counter, generate_latest # type: ignore
 
 from app.routes import logs
 from app.config import settings
