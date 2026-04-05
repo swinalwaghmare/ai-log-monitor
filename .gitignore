@@ -1,0 +1,117 @@
+# =========================
+# 🐍 Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs
+*.log
+
+# =========================
+# 🧪 Testing / Coverage
+# =========================
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# =========================
+# 📦 Environment Variables
+# =========================
+.env
+.env.local
+.env.dev
+.env.prod
+
+# =========================
+# 🐳 Docker
+# =========================
+# Ignore local docker overrides
+docker-compose.override.yml
+
+# =========================
+# ☸️ Kubernetes
+# =========================
+# Ignore generated files
+*.secret.yaml
+*.config
+kubeconfig
+
+# =========================
+# ☁️ AWS / Credentials
+# =========================
+.aws/
+*.pem
+*.key
+
+# =========================
+# 🧠 ML Models / Data
+# =========================
+*.pkl
+*.joblib
+data/
+*.csv
+
+# =========================
+# 💻 IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# 🪟 OS Files
+# =========================
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+
+# =========================
+# 📁 Misc
+# =========================
+*.tmp
+*.bak
+*.pid
+
+# =========================
+# 🚀 GitHub Actions Artifacts
+# =========================
+*.tar
+*.gz
+
+# =========================
+# 🔥 Project Specific
+# =========================
+# Ignore runtime logs from your system
+logs/
